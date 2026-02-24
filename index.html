@@ -174,16 +174,16 @@
       background: white;
     }
     .books-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 5rem;
       max-width: 900px;
       margin: 0 auto;
     }
     .book-card {
       display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 2rem;
+      grid-template-columns: 220px 1fr;
+      gap: 3rem;
       align-items: start;
     }
     .book-cover-wrap {
@@ -383,14 +383,14 @@
     /* ── CONTACT ── */
     #contact {
       padding: 7rem 3rem;
-      background: var(--dark);
+      background: var(--orange);
       color: white;
       text-align: center;
     }
-    #contact .section-label { color: var(--orange); }
+    #contact .section-label { color: white; opacity: 0.8; }
     #contact .section-title { color: white; }
-    #contact .section-title em { color: var(--orange); }
-    .contact-desc { color: #aaa; margin: 1rem auto 2.5rem; max-width: 400px; line-height: 1.7; }
+    #contact .section-title em { color: var(--dark); }
+    .contact-desc { color: rgba(255,255,255,0.85); margin: 1rem auto 2.5rem; max-width: 400px; line-height: 1.7; }
     .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
     .contact-link {
       display: inline-flex; align-items: center; gap: 0.5rem;
@@ -406,19 +406,19 @@
     }
     .contact-link.instagram:hover { opacity: 0.85; transform: translateY(-2px); }
     .contact-link.email {
-      background: rgba(255,255,255,0.1);
-      color: white; border: 1.5px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.25);
+      color: white; border: 1.5px solid rgba(255,255,255,0.4);
     }
-    .contact-link.email:hover { background: rgba(255,255,255,0.18); transform: translateY(-2px); }
+    .contact-link.email:hover { background: rgba(255,255,255,0.35); transform: translateY(-2px); }
 
     /* ── FOOTER ── */
     footer {
-      background: #111; color: #555;
+      background: var(--orange); color: white;
       text-align: center;
       padding: 1.5rem;
       font-size: 0.8rem;
     }
-    footer a { color: #777; text-decoration: none; }
+    footer a { color: white; text-decoration: none; opacity: 0.85; }
 
     /* ── ANIMATIONS ── */
     .reveal {
@@ -476,17 +476,45 @@
 
   <div class="books-grid">
 
-    <!-- LIVRE 1 -->
+    <!-- LIVRE 1 : Et même après -->
+    <div class="book-card reveal">
+      <div class="book-cover-wrap">
+        <img src="et-meme-apres.jpg" alt="Et même après" class="book-cover"
+          onerror="this.outerHTML='<div style=\'width:100%;aspect-ratio:2/3;background:linear-gradient(160deg,#4AADAB,#2d8a8a);border-radius:6px;box-shadow:0 15px 40px rgba(0,0,0,0.15);display:flex;align-items:flex-end;justify-content:center;padding:1rem;\'><span style=\'font-family:DM Sans,sans-serif;color:white;font-size:1.1rem;text-align:center;font-weight:700;line-height:1.3;\'>Et même après</span></div>'" />
+      </div>
+      <div class="book-info">
+        <p class="book-genre">Roman contemporain</p>
+        <h3 class="book-title">Et même après</h3>
+        <p class="book-desc">
+          <strong>Vic, Andréas et Tim se sont rencontrés à Hossegor quand ils avaient treize ans. Ils s'étaient promis d'être amis pour la vie, mais que valent les promesses face à la violence du réel ?</strong><br><br>
+          Quand Tim meurt à vingt-deux ans à cause d'une erreur d'Andréas, leur monde vole en éclats. Vic, qui venait de se fiancer à lui, est anéantie. Dans un élan de colère, elle interdit à Andréas d'être heureux si elle ne peut plus l'être. Andréas promet, puis disparaît de sa vie.<br><br>
+          Six ans plus tard, Vic vit à Vancouver, loin de tout ce qui lui rappelle ce qu'elle a perdu. Jusqu'au jour où elle apprend qu'Andréas va se marier...
+        </p>
+        <div class="book-actions">
+          <a href="https://buy.stripe.com/00w14peaB6ambaF9Kh87K00" class="book-btn-buy buy-direct" target="_blank">
+            🛒 Acheter — broché
+          </a>
+          <p style="font-size:0.75rem;color:#999;margin-top:0.2rem;">✍️ Option dédicace disponible à la commande</p>
+          <a href="extrait-et-meme-apres.pdf" class="extrait-btn" target="_blank">Lire les premières pages →</a>
+          <p class="book-links-label">Aussi disponible sur</p>
+          <div class="book-ext-links">
+            <a href="https://www.amazon.fr/m%C3%AAme-apr%C3%A8s-Alexandra-Nine-ebook/dp/B0GHJYW326?ref_=ast_author_dp&th=1&psc=1" class="ext-link" target="_blank">📦 Amazon</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIVRE 2 : La vie en couleur -->
     <div class="book-card reveal">
       <div class="book-cover-wrap">
         <img src="la-vie-en-couleur.jpg" alt="La vie en couleur" class="book-cover"
-          onerror="this.outerHTML='<div style=\'width:100%;aspect-ratio:2/3;background:linear-gradient(160deg,#F5A623,#E8247A);border-radius:6px;box-shadow:0 15px 40px rgba(0,0,0,0.15);display:flex;align-items:flex-end;justify-content:center;padding:1rem;\'><span style=\'font-family:Dancing Script,cursive;color:white;font-size:1.1rem;text-align:center;line-height:1.3;\'>La vie en couleur</span></div>'" />
+          onerror="this.outerHTML='<div style=\'width:100%;aspect-ratio:2/3;background:linear-gradient(160deg,#F5A623,#E8247A);border-radius:6px;box-shadow:0 15px 40px rgba(0,0,0,0.15);display:flex;align-items:flex-end;justify-content:center;padding:1rem;\'><span style=\'font-family:DM Sans,sans-serif;color:white;font-size:1.1rem;text-align:center;line-height:1.3;\'>La vie en couleur</span></div>'" />
       </div>
       <div class="book-info">
         <p class="book-genre">Roman contemporain</p>
         <h3 class="book-title">La vie en couleur</h3>
         <p class="book-desc">
-          Elle avait perdu toutes ses couleurs. Il lui a montré des nuances infinies.<br><br>
+          <strong>Elle avait perdu toutes ses couleurs. Il lui a montré des nuances infinies.</strong><br><br>
           Léna, 26 ans, a tout perdu : son copain, ses repères et un peu d'elle. En plein burn-out, elle croise par hasard la route de Nicholas, cofondateur d'une agence de marketing, qui lui propose un plan surprenant : reconquérir son ex à travers un rebranding complet… d'elle-même. Peu à peu, Léna retrouve ses couleurs. Mais plus les jours passent, plus le plan dévie. Parce que les sentiments n'obéissent à aucune méthode. Et que le cœur prend souvent des détours imprévus.
         </p>
         <div class="book-actions">
@@ -499,31 +527,6 @@
           <div class="book-ext-links">
             <a href="https://www.amazon.fr/s?k=la+vie+en+couleur+alexandra+nine" class="ext-link" target="_blank">📦 Amazon</a>
             <a href="https://www.fnac.com/livre-numerique/a21563609/Alexandra-Nine-La-vie-en-couleur" class="ext-link" target="_blank">📖 Kobo</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- LIVRE 2 -->
-    <div class="book-card reveal">
-      <div class="book-cover-wrap">
-        <img src="et-meme-apres.jpg" alt="Et même après" class="book-cover"
-          onerror="this.outerHTML='<div style=\'width:100%;aspect-ratio:2/3;background:linear-gradient(160deg,#4AADAB,#2d8a8a);border-radius:6px;box-shadow:0 15px 40px rgba(0,0,0,0.15);display:flex;align-items:flex-end;justify-content:center;padding:1rem;\'><span style=\'font-family:DM Sans,sans-serif;color:white;font-size:1.1rem;text-align:center;font-weight:700;line-height:1.3;\'>Et même après</span></div>'" />
-      </div>
-      <div class="book-info">
-        <p class="book-genre">Roman contemporain</p>
-        <h3 class="book-title">Et même après</h3>
-        <p class="book-desc">
-          Vic, Andréas et Tim se sont rencontrés à Hossegor quand ils avaient treize ans. Ils s'étaient promis d'être amis pour la vie, mais que valent les promesses face à la violence du réel ?<br><br>
-          Quand Tim meurt à vingt-deux ans à cause d'une erreur d'Andréas, leur monde vole en éclats. Vic, qui venait de se fiancer à lui, est anéantie. Dans un élan de colère, elle interdit à Andréas d'être heureux si elle ne peut plus l'être. Andréas promet, puis disparaît de sa vie.<br><br>
-          Six ans plus tard, Vic vit à Vancouver, loin de tout ce qui lui rappelle ce qu'elle a perdu. Jusqu'au jour où elle apprend qu'Andréas va se marier...
-        </p>
-        <div class="book-actions">
-          <a href="https://buy.stripe.com/00w14peaB6ambaF9Kh87K00" class="book-btn-buy buy-direct" target="_blank">
-            🛒 Acheter — broché
-          </a>
-          <p style="font-size:0.75rem;color:#999;margin-top:0.2rem;">✍️ Option dédicace disponible à la commande</p>
-          <a href="extrait-et-meme-apres.pdf" class="extrait-btn" target="_blank">Lire les premières pages →</a>
           </div>
         </div>
       </div>
@@ -548,11 +551,11 @@
         Alexandra Nine vit en France et écrit des histoires de vies, d'amour et de reconstruction. Elle aime les personnages complexes et imparfaits, au centre d'histoires intenses, ancrées dans le réel, où les émotions prennent toute la place.
       </p>
       <p class="about-bio">
-        Quand elle n'écrit pas, elle lit, regarde Friends en boucle et boit beaucoup trop de café.
+        Quand elle n'écrit pas, elle lit, regarde Orgueil et Préjugés beaucoup trop souvent pour l'admettre et survit grâce au café.
       </p>
       <div class="about-tags">
         <span class="tag">☕ Café addict</span>
-        <span class="tag">📺 Friends forever</span>
+        <span class="tag">🎬 Orgueil & Préjugés</span>
         <span class="tag">📚 Grande lectrice</span>
         <span class="tag">✍️ Émotions avant tout</span>
       </div>
