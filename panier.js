@@ -2,7 +2,7 @@
 // PANIER ALEXANDRA NINE
 // Remplace VERCEL_URL par ton URL Vercel réelle
 // =============================================
-const CHECKOUT_URL = 'https://TON_PROJET.vercel.app/api/checkout';
+const CHECKOUT_URL = 'https://alexandra-cart.vercel.app/api/checkout';
 
 const LIVRES = {
   'price_1T4QrwPnhmITZHrYOTUF1PPL': { titre: 'La vie en couleur', prix: 14.90 },
